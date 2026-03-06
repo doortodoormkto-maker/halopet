@@ -1,17 +1,53 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Positioning from "../components/Positioning.astro";
+import Services from "../components/Services.astro";
+import MagicMoment from "../components/MagicMoment.astro";
+import Principles from "../components/Principles.astro";
+import Audience from "../components/Audience.astro";
+import FinalCTA from "../components/FinalCTA.astro";
+import Footer from "../components/Footer.astro";
 
+const brand = "Halo My Pet";
+const description =
+    "Halo My Pet 提供專業到府放狗與上門餵食服務讓每一次照顧過程，變得可理解、可追溯、可被信任。";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+    title={`${brand}｜到府放狗・上門餵食・可追溯照顧流程`}
+    description={description}
+>
+    <Header brand={brand} />
+
+    <main id="top">
+        <Hero brand={brand} description={description} />
+
+        <section class="content">
+            <div class="container">
+                <Positioning />
+                <Services />
+                <MagicMoment />
+                <Principles />
+            </div>
+        </section>
+
+        <Audience />
+        <FinalCTA />
+        <Footer brand={brand} />
+    </main>
+
+    <script is:inline>
+        document.querySelectorAll('a[href^="#"]').forEach((a) => {
+            a.addEventListener("click", (e) => {
+                const id = a.getAttribute("href");
+                if (!id || id === "#") return;
+                const el = document.querySelector(id);
+                if (!el) return;
+                e.preventDefault();
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        });
+    </script>
+</BaseLayout>

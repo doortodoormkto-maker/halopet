@@ -1,0 +1,56 @@
+---
+interface Props {
+    brand: string;
+    description?: string;
+    phoneSrc?: string;
+    leftCardSrc?: string;
+    rightCardSrc?: string;
+}
+
+const {
+    brand,
+    description = `${brand} 提供專業到府放狗與上門餵食服務，<br/>
+  讓每一次照顧過程，變得可理解、可追溯、可被信任。`,
+    phoneSrc = "/images/ui.png",
+    leftCardSrc = "/images/ui.png",
+    rightCardSrc = "/images/ui2.png",
+} = Astro.props;
+---
+
+<section class="hero2" aria-label="Hero">
+    <div class="container hero2-inner">
+        <div class="hero2-copy">
+            <div class="kicker">
+                <span></span>
+                可理解・可追溯・可被信任
+            </div>
+
+            <h1>
+                寵物的照顧，<br />
+                應該值得被放心交托。
+            </h1>
+
+            <div class="hero2-stage" aria-hidden="true">
+                <div class="hero2-grid"></div>
+
+                <img
+                    class="hero2-card hero2-card--left float"
+                    src={leftCardSrc}
+                    alt=""
+                />
+                <img
+                    class="hero2-main float"
+                    src="/images/halopet.png"
+                    alt="app preview"
+                />
+                <img
+                    class="hero2-card hero2-card--right float"
+                    src={rightCardSrc}
+                    alt=""
+                />
+            </div>
+
+            {description && <p class="hero2-desc">{description}</p>}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,45 @@
+---
+interface Props {
+    brand: string;
+}
+const { brand } = Astro.props;
+---
+
+<footer class="footer footer--new">
+    <div class="container">
+        <div class="footer-top">
+            <!-- Logo + Brand -->
+            <div class="footer-brand">
+                <img
+                    src="/images/halopetlogo.png"
+                    alt={brand}
+                    class="footer-logo"
+                />
+
+                <div>
+                    <div class="footer-name">{brand}</div>
+                    <div class="footer-sub">可理解・可追溯・可被信任</div>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div class="footer-links">
+                <a href="#positioning">品牌定位</a>
+                <a href="#services">核心服務</a>
+                <a href="#magic">Magic Moment</a>
+                <a href="#booking">預約</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div>
+                © {new Date().getFullYear()}
+                {brand}. All rights reserved.
+            </div>
+
+            <div class="footer-mini">
+                <a href="#top">Back to top ↑</a>
+            </div>
+        </div>
+    </div>
+</footer>

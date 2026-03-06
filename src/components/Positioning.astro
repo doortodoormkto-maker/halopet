@@ -1,0 +1,109 @@
+---
+interface Props {
+    imageSrc: string;
+    imageAlt?: string;
+}
+const { imageSrc, imageAlt = "Brand positioning preview" } = Astro.props;
+---
+
+<section
+    id="positioning"
+    class="stage stage--alt pos-min"
+    aria-label="Brand Positioning"
+>
+    <div class="blob blob--cream pos-tl" aria-hidden="true"></div>
+    <div class="blob blob--peach pos-br" aria-hidden="true"></div>
+
+    <div class="container stage-inner">
+        <header class="pos-min-head">
+            <h2 class="pos-min-title">品牌定位</h2>
+        </header>
+
+        <div class="pos-min-grid">
+            {/* Left image only */}
+            <div class="pos-min-visual" aria-hidden="true">
+                <img
+                    class="pos-min-img float"
+                    src="/images/ui3.png"
+                    alt={imageAlt}
+                    loading="lazy"
+                />
+            </div>
+
+            {/* Right text only */}
+            <div class="pos-min-copy">
+                <p class="pos-min-sub">
+                    不是單一服務供應者，而是一套「可追溯的照顧流程」
+                </p>
+
+                <div class="pos-min-list" role="list">
+                    <div class="pos-min-item" role="listitem">
+                        <div class="pos-min-ic" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M7 7h10v10H7V7Z"
+                                    stroke="currentColor"
+                                    stroke-width="2"></path>
+                                <path
+                                    d="M9 12h6"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="pos-min-h">平台化照顧</div>
+                            <div class="pos-min-d">
+                                Halo My Pet
+                                並非單一寵物服務供應者，而是一個寵物生活照顧平台。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pos-min-item" role="listitem">
+                        <div class="pos-min-ic" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M4 7h16v10H4V7Z"
+                                    stroke="currentColor"
+                                    stroke-width="2"></path>
+                                <path
+                                    d="M8 11h8"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="pos-min-h">一致流程 × 記錄機制</div>
+                            <div class="pos-min-d">
+                                透過一致的服務流程與記錄機制，讓照顧品質穩定可預期。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pos-min-item" role="listitem">
+                        <div class="pos-min-ic" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z"
+                                    stroke="currentColor"
+                                    stroke-width="2"></path>
+                                <path
+                                    d="M12 11.5a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"
+                                    stroke="currentColor"
+                                    stroke-width="2"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="pos-min-h">不在場也能掌握狀態</div>
+                            <div class="pos-min-d">
+                                讓主人即使不在現場，仍然能掌握寵物的狀態。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
