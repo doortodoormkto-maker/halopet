@@ -1951,40 +1951,47 @@ h1 {
     text-align: center;
 }
 
+/* desktop 保持 grid */
 .principles-grid {
-    margin-top: 40px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 28px;
 }
 
-.principle-card {
-    border-radius: 24px;
-    overflow: hidden;
-    background: #f6f7fb;
-    transition: all .25s ease;
-}
 
-.principle-card img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-}
+/* mobile */
+@media (max-width:768px) {
 
-.card-text {
-    padding: 24px;
-}
+    .principles-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 
-.card-text h4 {
-    margin: 0 0 6px;
-    font-size: 18px;
-    font-weight: 900;
-}
+    .principle-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+    }
 
-.card-text p {
-    margin: 0;
-    color: var(--muted);
-    font-size: 14px;
+    .principle-card img {
+        width: 42px;
+        height: 42px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .card-text h4 {
+        font-size: 16px;
+        margin: 0 0 4px;
+    }
+
+    .card-text p {
+        font-size: 14px;
+        color: var(--muted);
+        margin: 0;
+    }
+
 }
 
 /* hover effect */
@@ -2124,4 +2131,53 @@ section[id] {
     height: 42px;
     width: auto;
     display: block;
+}
+
+/* desktop */
+.principles-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* mobile: 改成條列 */
+@media (max-width: 768px) {
+    .principles-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 18px !important;
+    }
+
+    .principle-card {
+        display: flex !important;
+        align-items: center !important;
+        gap: 14px !important;
+        padding: 16px !important;
+        border-radius: 18px;
+        background: #f6f7fb;
+    }
+
+    .principle-card img {
+        width: 56px !important;
+        height: 56px !important;
+        object-fit: cover;
+        border-radius: 12px;
+        flex-shrink: 0;
+    }
+
+    .card-text {
+        padding: 0 !important;
+    }
+
+    .card-text h4 {
+        margin: 0 0 4px !important;
+        font-size: 16px !important;
+    }
+
+    .card-text p {
+        margin: 0 !important;
+        font-size: 14px !important;
+        line-height: 1.5;
+    }
 }
