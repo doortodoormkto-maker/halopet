@@ -1693,7 +1693,7 @@ h1 {
 }
 
 
-//* HERO */
+/* HERO */
 
 .hero2 {
     padding: 70px 0 40px;
@@ -2013,8 +2013,7 @@ h1 {
 .principle-card {
     border-radius: 24px;
     overflow: hidden;
-    background: #f6f7fb;
-    transition: all .25s ease;
+    background: #ffffff;
 }
 
 .principle-card img {
@@ -2141,43 +2140,50 @@ section[id] {
     gap: 28px;
 }
 
-/* mobile: 改成條列 */
+/* ｐｒｉｎｃｉｐｌｅｃａｒｄ mobile */
 @media (max-width: 768px) {
+
     .principles-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 18px !important;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .principle-card {
-        display: flex !important;
-        align-items: center !important;
-        gap: 14px !important;
-        padding: 16px !important;
-        border-radius: 18px;
-        background: #f6f7fb;
-    }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
 
-    .principle-card img {
-        width: 56px !important;
-        height: 56px !important;
-        object-fit: cover;
-        border-radius: 12px;
-        flex-shrink: 0;
+        gap: 12px;
+        padding: 20px;
+
+        border-radius: 18px;
+        background: #ffffff;
     }
 
     .card-text {
-        padding: 0 !important;
+        padding: 0;
     }
 
     .card-text h4 {
-        margin: 0 0 4px !important;
-        font-size: 16px !important;
+        margin: 0 0 6px;
+        font-size: 18px;
     }
 
     .card-text p {
-        margin: 0 !important;
-        font-size: 14px !important;
-        line-height: 1.5;
+        margin: 0;
+        font-size: 14px;
+        line-height: 1.6;
     }
+
+    .principle-card img {
+        width: 100%;
+        max-width: 220px;
+        /* 控制圖大小 */
+        height: auto;
+        margin-top: 8px;
+        object-fit: contain;
+    }
+
 }
