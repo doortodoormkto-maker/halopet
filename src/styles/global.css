@@ -2084,10 +2084,7 @@ h1 {
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* ✅ 1) 內容整體往下讓出 header 高度 */
-body {
-    padding-top: var(--nav-h, 76px);
-}
+
 
 /* ✅ 2) 點 anchor 時，瀏覽器會自動留位（平滑跳轉） */
 html {
