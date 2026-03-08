@@ -7,17 +7,56 @@ const { brand } = Astro.props;
 
 <header class="nav nav--new">
     <div class="container nav-inner">
-        <!-- Logo -->
         <a class="brand" href="#top" aria-label="Go to top">
             <img src="/images/halopetlogo.png" alt={brand} class="brand-logo" />
         </a>
 
-        <!-- Navigation -->
         <nav class="nav-links" aria-label="Primary">
             <a href="#positioning">品牌定位</a>
             <a href="#services">核心服務</a>
             <a href="#magic">Magic Moment</a>
-            <a href="#booking" class="btn btn-primary btn--nav"> 立即下載 </a>
+            <a href="#booking" class="btn btn-primary btn--nav">立即下載</a>
         </nav>
+
+        <div class="nav-actions">
+            <a href="#booking" class="btn btn-primary nav-download">立即下載</a>
+
+            <button
+                class="nav-toggle"
+                type="button"
+                aria-label="Open menu"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#positioning">品牌定位</a>
+        <a href="#services">核心服務</a>
+        <a href="#magic">Magic Moment</a>
     </div>
 </header>
+
+<script is:inline>
+    const navToggle = document.querySelector(".nav-toggle");
+    const mobileMenu = document.querySelector(".mobile-menu");
+
+    if (navToggle && mobileMenu) {
+        navToggle.addEventListener("click", () => {
+            const isOpen = mobileMenu.classList.toggle("is-open");
+            navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                mobileMenu.classList.remove("is-open");
+                navToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+    }
+</script>
