@@ -1927,12 +1927,27 @@ h1 {
 
 /* responsive */
 @media (max-width: 980px) {
+
     .magic2-inner {
         grid-template-columns: 1fr;
     }
 
     .magic2-left {
         min-height: 360px;
+        width: 100%;
+    }
+
+    /* 圖片滿版 */
+    .magic2-left img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* 如果 container 有 padding，消掉 */
+    .magic2-inner {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .magic2-blob {
@@ -2184,6 +2199,42 @@ section[id] {
         height: auto;
         margin-top: 8px;
         object-fit: contain;
+    }
+
+}
+
+
+/* Mobile download button */
+
+.mobile-download {
+    display: none;
+    background: linear-gradient(135deg, #ff7a2f, #ff9a3c);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* mobile header download layout */
+
+@media (max-width: 768px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-download {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
 }
