@@ -678,18 +678,10 @@ h1 {
     padding-top: 18px;
 }
 
-.footer-links {
+.foot-links {
     display: flex;
-    gap: 24px;
-    align-items: center;
-    justify-content: flex-end;
-    flex-wrap: nowrap;
-    /* 永遠不換行 */
-}
-
-.footer-links a {
-    white-space: nowrap;
-    /* 文字不斷行 */
+    gap: 14px;
+    flex-wrap: wrap;
 }
 
 /* Responsive */
