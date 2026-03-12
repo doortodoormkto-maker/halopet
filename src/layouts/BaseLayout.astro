@@ -23,6 +23,44 @@ const { title, description } = Astro.props;
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap"
             rel="stylesheet"
         />
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <!-- Title -->
+        <title>{title}</title>
+
+        <!-- SEO -->
+        <meta name="description" content={description} />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Open Graph (Facebook / Threads / WhatsApp / LinkedIn) -->
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.halomypet.com/" />
+        <meta property="og:image" content="https://www.halomypet.com/app.png" />
+        <meta property="og:site_name" content="Halo My Pet" />
+        <meta property="og:locale" content="zh_HK" />
+
+        <!-- OG image size -->
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta
+            name="twitter:image"
+            content="https://www.halomypet.com/app.png"
+        />
+
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="/logoicon.png" />
+
+        <!-- theme color -->
+        <meta name="theme-color" content="#E86A2A" />
     </head>
 
     <body>
