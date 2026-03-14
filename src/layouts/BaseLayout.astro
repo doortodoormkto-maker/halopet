@@ -5,18 +5,26 @@ interface Props {
     title: string;
     description: string;
 }
+
 const { title, description } = Astro.props;
+
+const siteUrl = "https://www.halomypet.com";
+const ogImage = `${siteUrl}/images/app.png`;
+const favicon = "/logoicon.png?v=2";
 ---
 
 <!doctype html>
 <html lang="zh-Hant">
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="robots" content="index, follow" />
         <meta name="theme-color" content="#E86A2A" />
 
+        <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -24,46 +32,27 @@ const { title, description } = Astro.props;
             rel="stylesheet"
         />
 
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href={favicon} />
+        <link rel="shortcut icon" href={favicon} />
+        <link rel="apple-touch-icon" href={favicon} />
 
-        <!-- Title -->
-        <title>{title}</title>
-
-        <!-- SEO -->
-        <meta name="description" content={description} />
-        <meta name="robots" content="index, follow" />
-
-        <!-- Open Graph (Facebook / Threads / WhatsApp / LinkedIn) -->
+        <!-- Open Graph -->
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.halomypet.com/" />
-        <meta
-            property="og:image"
-            content="https://www.halomypet.com/images/app.png"
-        />
+        <meta property="og:url" content={siteUrl} />
+        <meta property="og:image" content={ogImage} />
         <meta property="og:site_name" content="Halo My Pet" />
         <meta property="og:locale" content="zh_HK" />
-
-        <!-- OG image size -->
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
-        <!-- Twitter Card -->
+        <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta
-            name="twitter:image"
-            content="https://www.halomypet.com/images/app.png"
-        />
-
-        <!-- favicon -->
-        <link rel="icon" type="image/png" href="/logoicon.png" />
-
-        <!-- theme color -->
-        <meta name="theme-color" content="#E86A2A" />
+        <meta name="twitter:image" content={ogImage} />
     </head>
 
     <body>
