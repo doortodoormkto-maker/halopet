@@ -9,7 +9,7 @@ interface Props {
 const { title, description } = Astro.props;
 
 const siteUrl = "https://www.halomypet.com";
-const ogImage = `${siteUrl}/images/app.png`;
+const shareImage = `${siteUrl}/doggie.png`;
 const favicon = "/doggie.png";
 ---
 
@@ -33,7 +33,7 @@ const favicon = "/doggie.png";
         />
 
         <!-- Favicon -->
-        <link rel="icon" type="image/png" href={favicon} />
+        <link rel="icon" href={favicon} type="image/png" />
         <link rel="shortcut icon" href={favicon} />
         <link rel="apple-touch-icon" href={favicon} />
 
@@ -42,17 +42,15 @@ const favicon = "/doggie.png";
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={siteUrl} />
-        <meta property="og:image" content={ogImage} />
+        <meta property="og:image" content={shareImage} />
         <meta property="og:site_name" content="Halo My Pet" />
         <meta property="og:locale" content="zh_HK" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
 
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={ogImage} />
+        <meta name="twitter:image" content={shareImage} />
     </head>
 
     <body>
